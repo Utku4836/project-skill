@@ -82,4 +82,4 @@ Copy the contents of `project.md` and `wrap.md` into your `.cursorrules` or syst
 
 ## License
 
-MIT
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
