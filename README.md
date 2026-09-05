@@ -1,20 +1,25 @@
-# Universal Project Scaffolding Skill (`/project`)
+# Universal Project Scaffolding & Session Discipline (`/project` & `/wrap`)
 
-A lightweight, disciplined scaffolding skill for AI coding agents (Antigravity, Claude Code, Cursor, Codex).
+A pair of lightweight, disciplined workflow skills for AI coding agents (Antigravity, Claude Code, Cursor, Codex).
 
-It establishes clean repository structure, tailored agent guidelines (`AGENTS.md`), persistent architecture notes, scratchpad isolation, and session wrap-up protocols.
+This package provides two dedicated commands:
+* **`/project` (`project.md`):** Scaffolds clean, disciplined project architecture, enforces interview preflight checks, and generates living `AGENTS.md` guidelines.
+* **`/wrap` (`wrap.md`):** Closes development sessions cleanly by verifying builds, synchronizing the backlog, cleaning temporary files, and committing/pushing to Git.
 
-## Core Features
+---
 
-- **Interview Gate:** Asks 4 targeted questions before generating code to avoid assumptions and hallucinations.
-- **Preflight Checks:** Validates Git and CLI dependencies (`git`, `gh`) before writing files.
-- **Standard Layout:** Scaffolds a predictable workspace with `notes/`, `scratch/`, and `reports/`.
-- **Living `AGENTS.md`:** Generates project-specific guidelines from interview answers rather than generic boilerplate.
-- **Persistent Notes:** Obsidian/Karpathy-style lightweight memory (`architecture.md` and lazy-loaded `learnings.md`).
-- **Scratchpad Isolation:** Keeps temporary scripts in `scratch/` with a hardened `.gitignore`.
-- **Session Wrap-up (`/wrap`):** Summarizes changes, updates the backlog, commits cleanly, and hands off context.
+## What Is Included
 
-## Standard Directory Structure
+| Skill / Command | File | Primary Responsibility |
+| :--- | :--- | :--- |
+| **`/project`** | `project.md` | Zero-hallucination interview, environment preflight check, directory structure, project-tailored `AGENTS.md`, persistent notes, and scratchpad isolation. |
+| **`/wrap`** | `wrap.md` | Pre-finish health verification, workspace cleanup ("Leave No Trace"), `Backlog.md` updates, semantic Git commit & push, and handoff summary. |
+
+---
+
+## Standard Scaffolding Architecture
+
+When `/project` is triggered, it establishes this standardized layout:
 
 ```text
 project-root/
@@ -23,44 +28,57 @@ project-root/
 ├── constants.md        # Shared constants (ports, URLs, configs)
 ├── notes/
 │   ├── architecture.md # Architectural decisions and data flow
-│   └── learnings.md    # Single-line bug fixes and lessons (lazy loaded)
-├── scratch/            # Ignored scratchpad for temporary test scripts
+│   └── learnings.md    # Single-line bug lessons (lazy loaded)
+├── scratch/            # Ignored scratchpad for throwaway test scripts
 ├── reports/            # Deep-dive research and analysis reports
 └── .gitignore          # Baseline security and cleanup filter
 ```
 
+---
+
 ## Installation
 
-### Antigravity
-Clone into your project's local skills directory:
+### 1. Antigravity CLI & Desktop
+To have both `/project` and `/wrap` available in your `/` command menu:
+
+Clone into your workspace skills directory:
 ```bash
-git clone https://github.com/Utku4836/project-skill.git .agent/skills/project
+git clone https://github.com/Utku4836/project-skill.git .agent/skills/project-suite
 ```
-Or place it in your global skills directory:
+Or install globally for all projects:
 ```bash
-git clone https://github.com/Utku4836/project-skill.git ~/.gemini/antigravity-cli/skills/project
+git clone https://github.com/Utku4836/project-skill.git ~/.gemini/antigravity-cli/skills/project-suite
 ```
 
-### Claude Code / Codex
-Reference or copy `SKILL.md` into your agent instructions or project prompt:
+*(Antigravity automatically discovers both `skills/project/SKILL.md` and `skills/wrap/SKILL.md` inside this repo).*
+
+### 2. Claude Code & Codex
+Provide `project.md` or `wrap.md` in your prompts or include them in your instructions:
 ```text
-Read SKILL.md and follow the 8-step scaffolding protocol to initialize my project.
+Read project.md to initialize my new project.
+```
+```text
+Read wrap.md and perform the session wrap-up protocol.
 ```
 
-### Cursor / Other Agents
-Add the directives in `SKILL.md` to your `.cursorrules` or system prompt.
+### 3. Cursor & Other AI Editors
+Copy the contents of `project.md` and `wrap.md` into your `.cursorrules` or system prompt.
+
+---
 
 ## Usage
 
-Start a project:
+### Start a Project
 ```text
 /project [project-name]
 ```
 
-End a session:
+### Wrap Up a Session
 ```text
 /wrap
 ```
+
+---
 
 ## License
 

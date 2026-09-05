@@ -153,8 +153,9 @@ Fix any identified issues before declaring the task complete.
 ## Step 8: Session Wrap-Up Protocol (`/wrap`)
 
 When the user types `/wrap` or ends a work session:
-1. Provide a concise 3-bullet summary of what was accomplished.
-2. Transfer any open threads or next steps into `Backlog.md`.
-3. Clean up the workspace (enforce Leave No Trace).
-4. Stage and commit changes with a clean, semantic commit message, then push to GitHub.
-5. Provide a clear handoff summary and close the session cleanly.
+1. Execute the full wrap protocol defined in `wrap.md`.
+2. Provide a concise 3-bullet summary of what was accomplished.
+3. Transfer any open threads or next steps into `Backlog.md`.
+4. Clean up the workspace (enforce Leave No Trace).
+5. Stage and commit changes with a clean, semantic commit message, then push to GitHub.
+6. Provide a clear handoff summary and close the session cleanly.
