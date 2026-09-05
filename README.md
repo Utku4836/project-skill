@@ -1,85 +1,25 @@
-# Universal Project Scaffolding & Session Discipline (`/project` & `/wrap`)
+# Project & Wrap Skills
 
-A pair of lightweight, disciplined workflow skills for AI coding agents (Antigravity, Claude Code, Cursor, Codex).
+A set of workflow guidelines and skills for AI coding assistants (Antigravity, Claude Code, Cursor, Codex).
 
-This package provides two dedicated commands:
-* **`/project` (`project.md`):** Scaffolds clean, disciplined project architecture, enforces interview preflight checks, and generates living `AGENTS.md` guidelines.
-* **`/wrap` (`wrap.md`):** Closes development sessions cleanly by verifying builds, synchronizing the backlog, cleaning temporary files, and committing/pushing to Git.
+Designed to help agents start projects cleanly, maintain a structured workspace, and wrap up development sessions with proper Git commits and backlog tracking.
 
----
+## Overview
 
-## What Is Included
-
-| Skill / Command | File | Primary Responsibility |
-| :--- | :--- | :--- |
-| **`/project`** | `project.md` | Zero-hallucination interview, environment preflight check, directory structure, project-tailored `AGENTS.md`, persistent notes, and scratchpad isolation. |
-| **`/wrap`** | `wrap.md` | Pre-finish health verification, workspace cleanup ("Leave No Trace"), `Backlog.md` updates, semantic Git commit & push, and handoff summary. |
-
----
-
-## Standard Scaffolding Architecture
-
-When `/project` is triggered, it establishes this standardized layout:
-
-```text
-project-root/
-├── AGENTS.md           # Living agent constitution and context map
-├── Backlog.md          # Pending tasks and milestone roadmap
-├── constants.md        # Shared constants (ports, URLs, configs)
-├── notes/
-│   ├── architecture.md # Architectural decisions and data flow
-│   └── learnings.md    # Single-line bug lessons (lazy loaded)
-├── scratch/            # Ignored scratchpad for throwaway test scripts
-├── reports/            # Deep-dive research and analysis reports
-└── .gitignore          # Baseline security and cleanup filter
-```
-
----
-
-## Installation
-
-### 1. Antigravity CLI & Desktop
-To have both `/project` and `/wrap` available in your `/` command menu:
-
-Clone into your workspace skills directory:
-```bash
-git clone https://github.com/Utku4836/project-skill.git .agent/skills/project-suite
-```
-Or install globally for all projects:
-```bash
-git clone https://github.com/Utku4836/project-skill.git ~/.gemini/antigravity-cli/skills/project-suite
-```
-
-*(Antigravity automatically discovers both `skills/project/SKILL.md` and `skills/wrap/SKILL.md` inside this repo).*
-
-### 2. Claude Code & Codex
-Provide `project.md` or `wrap.md` in your prompts or include them in your instructions:
-```text
-Read project.md to initialize my new project.
-```
-```text
-Read wrap.md and perform the session wrap-up protocol.
-```
-
-### 3. Cursor & Other AI Editors
-Copy the contents of `project.md` and `wrap.md` into your `.cursorrules` or system prompt.
-
----
+- **`/project` (`project.md`):** Protocol for scaffolding new projects, setting up architectural notes, living agent guidelines (`AGENTS.md`), and workspace boundaries without hallucinations.
+- **`/wrap` (`wrap.md`):** Protocol for ending a session, cleaning up temporary files, syncing pending tasks, and pushing clean commits.
 
 ## Usage
 
-### Start a Project
-```text
-/project [project-name]
-```
+You can use these files directly in your agent environment:
 
-### Wrap Up a Session
-```text
-/wrap
-```
+- **Skills / Workflows:** Place this repository or the individual files into your agent's skills folder (e.g. `.agent/skills/` or global config).
+- **Custom Instructions:** Reference or copy `project.md` and `wrap.md` into your project rules (`.cursorrules`, `AGENTS.md`, or prompt).
 
----
+Trigger the protocols when needed:
+- `/project` — Initialize a new project
+- `/wrap` — Conclude and commit the current session
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+MIT License. See [LICENSE](LICENSE) for details.
