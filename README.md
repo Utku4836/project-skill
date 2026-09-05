@@ -6,8 +6,8 @@ Designed to help agents start projects cleanly, maintain a structured workspace,
 
 ## Overview
 
-- **`/project` (`project.md`):** Protocol for scaffolding new projects, setting up architectural notes, living agent guidelines (`AGENTS.md`), and workspace boundaries without hallucinations.
-- **`/wrap` (`wrap.md`):** Protocol for ending a session, cleaning up temporary files, syncing pending tasks, and pushing clean commits.
+- **`/project` (`skills/project/Project-Skill.md`):** Protocol for scaffolding new projects, setting up architectural notes, living agent guidelines (`AGENTS.md`), and workspace boundaries without hallucinations.
+- **`/wrap` (`skills/wrap/Wrap.md`):** Protocol for ending a session, cleaning up temporary files, syncing pending tasks, and pushing clean commits.
 
 ## Project Structure
 
@@ -31,7 +31,7 @@ project-root/
 You can use these files directly in your agent environment:
 
 - **Skills / Workflows:** Place this repository or the individual files into your agent's skills folder (e.g. `.agent/skills/` or global config).
-- **Custom Instructions:** Reference or copy `project.md` and `wrap.md` into your project rules (`.cursorrules`, `AGENTS.md`, or prompt).
+- **Custom Instructions:** Reference or copy the skill files into your project rules (`.cursorrules`, `AGENTS.md`, or prompt).
 
 Trigger the protocols when needed:
 - `/project` — Initialize a new project
