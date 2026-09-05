@@ -9,6 +9,23 @@ Designed to help agents start projects cleanly, maintain a structured workspace,
 - **`/project` (`project.md`):** Protocol for scaffolding new projects, setting up architectural notes, living agent guidelines (`AGENTS.md`), and workspace boundaries without hallucinations.
 - **`/wrap` (`wrap.md`):** Protocol for ending a session, cleaning up temporary files, syncing pending tasks, and pushing clean commits.
 
+## Project Structure
+
+When initialized with `/project`, it establishes this standardized layout:
+
+```text
+project-root/
+├── AGENTS.md           # Living agent constitution and context map
+├── Backlog.md          # Pending tasks and milestone roadmap
+├── constants.md        # Shared constants (ports, URLs, configs)
+├── notes/
+│   ├── architecture.md # Architectural decisions and data flow
+│   └── learnings.md    # Single-line bug fixes and lessons (lazy loaded)
+├── scratch/            # Ignored scratchpad for temporary test scripts
+├── reports/            # Deep-dive research and analysis reports
+└── .gitignore          # Baseline security and cleanup filter
+```
+
 ## Usage
 
 You can use these files directly in your agent environment:
